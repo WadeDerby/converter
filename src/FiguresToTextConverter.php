@@ -63,7 +63,7 @@ class FiguresToTextConverter
     	}
 
     	if($number < 0){
-    		$absValue = $number;
+    		$absValue = abs($number);
     		"Negative " . $this->convertToWords($absValue);
     	}
 
