@@ -7,7 +7,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     * Test that true does in fact equal true
+     * Test the convertToWords function works
      */
     public function testTrueIsTrue()
     {
