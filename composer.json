@@ -1,6 +1,6 @@
 {
     "name": "wade/converter",
-    "description": ":converts figures to words and words to figures",
+    "description": "Converts figures to words and words to figures",
     "keywords": [
         "wade",
         "converter"
@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "0.1"
         }
     }
 }
