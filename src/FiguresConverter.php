@@ -187,7 +187,8 @@ class FiguresConverter
 			default:
 				$message = "Fatal Error - Value passed data type unknown ";
 				break;
-				return $message;
+
+			return $message;
 		}
 	}
 }
