@@ -60,7 +60,7 @@ class FiguresConverter
 
     	if ($number < 0) {
     		$absValue = abs($number);
-    		"Negative " . $this->convertToWords($absValue);
+    		"Negative " . $this->convertNumber($absValue);
     	}
 
     	if ($number <= 20 ) {
@@ -85,7 +85,7 @@ class FiguresConverter
     		$remainder = $number % 100;
     		//check if number has remainder if yes convert remainder and append to hundreds
     		if ($remainder != 0) {
-    			$value .= $keys[$hundreds] ." ". $keys[100] . " and " . $this->convertToWords($remainder);
+    			$value .= $keys[$hundreds] ." ". $keys[100] . " and " . $this->convertNumber($remainder);
     		}else {
     			$value .= $keys[$hundreds] . " " . $keys[100];
     		}
@@ -97,11 +97,11 @@ class FiguresConverter
     		$actualUnit = ($number - $remainder) / $baseUnit;
 
     		if ($remainder != 0) {
-    			$value .= $this->convertToWords($actualUnit) . " " .$keys[$baseUnit];
+    			$value .= $this->convertNumber($actualUnit) . " " .$keys[$baseUnit];
     			$value .= $remainder < 100 ? ' and ' : ' , ';
-    			$value .= $this->convertToWords($remainder);
+    			$value .= $this->convertNumber($remainder);
     		}else {
-    			$value .= $this->convertToWords($actualUnit) . " " .$keys[$baseUnit];
+    			$value .= $this->convertNumber($actualUnit) . " " .$keys[$baseUnit];
     		}
 
     	}
@@ -121,9 +121,9 @@ class FiguresConverter
 		$bool = $this->isConvertable($value);
 		//check if number can be converted return string, else return message
 		if ($bool === true) {
-			$this->convertNumber($value);
+			return $this->convertNumber($value);
 		}else {
-			$this->getErrorResponse($bool);
+			return $this->getErrorResponse($bool);
 		}
 	}
 
@@ -162,33 +162,31 @@ class FiguresConverter
 		//get error code and return user friendly error message
 		switch ($errorCode) {
 			case 20:
-				$message = "Error - null value passed";
+				return "Error - null value passed";
 				break;
 			
 			case 21:
-				$message = "Error - value passed is out of bounds";
+				return "Error - value passed is out of bounds";
 				break;
 			case 22:
-				$message = "Error - value passed is not numeric";
+				return "Error - value passed is not numeric";
 				break;
 
 			case 23:
-				$message = "Error - string or object passed expecting integer";
+				return "Error - string or object passed expecting integer";
 				break;
 
 			case 24:
-				$message = "Error - floating point passed expecting integer";
+				return "Error - floating point passed expecting integer";
 				break;
 
 			case 25:
-				$message = "Error - something went wrong ";
+				return "Error - something went wrong ";
 				break;
 
 			default:
-				$message = "Fatal Error - Value passed data type unknown ";
+				return "Fatal Error - Value passed data type unknown ";
 				break;
-
-			return $message;
 		}
 	}
 }
