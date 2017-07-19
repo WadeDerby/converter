@@ -18,7 +18,8 @@ $ composer require wade/converter
 ## Usage
 use Wade\Converter;
 
-``` $converter = new FiguresConverter();
+``` 
+	$converter = new FiguresConverter();
 	$converter->convertToWords($value);
 
 ```
