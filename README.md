@@ -1,11 +1,11 @@
-# Wade Figures to Word Converter
+# Wade Converter - Converts words to figures and figures to words.  
 
 [![Latest Version](https://img.shields.io/github/release/thephpleague/skeleton.svg?style=flat-square)](https://github.com/WadeDerby/converter/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/league/skeleton.svg?style=flat-square)](https://packagist.org/packages/wade/converter)
 
-
-This is a number to words library. It converts any number you input into words and converts any figure in words you input into numbers. 
+This is a php library built to convert amounts in figures to words and vice versa. Currently supports php 5 and php 7. 
+ 
 
 ## Install
 
@@ -16,8 +16,10 @@ $ composer require wade/converter
 ```
 
 ## Usage
+use Wade\Converter;
 
-``` php
+``` $converter = new FiguresConverter();
+	$converter->convertToWords($value);
 
 ```
 
@@ -33,7 +35,7 @@ Please see [CONTRIBUTING](https://github.com/wadederby/converter/blob/master/CON
 
 ## Credits
 
-- [:author_name](https://github.com/wadederby)
+- Wade Derby (https://github.com/wadederby)
 
 ## License
 
