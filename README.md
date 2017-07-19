@@ -16,11 +16,12 @@ $ composer require wade/converter
 ```
 
 ## Usage
-use Wade\Converter;
 
 ``` 
-	$converter = new FiguresConverter();
+	$converter = new Wade\Converter\FiguresConverter();
 	$converter->convertToWords($value);
+
+	
 
 ```
 
